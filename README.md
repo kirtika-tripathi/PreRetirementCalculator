@@ -16,4 +16,4 @@ The application tests three different scenarios mentioned in PreRetirementCalcul
  - The test 'formSubmissionWithSocialBenefitsNoAdjustments' tests the calculator with Social benefits but no default adjustments.
  - The test 'formSubmissionWithSocialBenefitsAndAdjustments' tests the calculator with Social benefits and with default adjustments.
  
-The application uses CalculatorConstants.java to store the test data, config properties and other constants.
+The application uses Constants.java to store the test data, config properties and other constants.
