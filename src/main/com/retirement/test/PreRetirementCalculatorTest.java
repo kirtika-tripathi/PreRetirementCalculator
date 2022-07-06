@@ -9,12 +9,12 @@ import org.testng.annotations.AfterClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeUnit;;
 
 
 public class PreRetirementCalculatorTest {
-	
-    WebDriver driver;
+
+	WebDriver driver;
 	PreRetirementCalculatorPage obj = new PreRetirementCalculatorPage(driver);
 
 	@BeforeClass
@@ -30,11 +30,12 @@ public class PreRetirementCalculatorTest {
 	@BeforeMethod
 	public void openBrowser() {
 		driver.get(Constants.TEST_URL);
-		
+		System.out.println("we are inside AUT");
 	}
 
-    /**
+	/**
 	 * This method calculates without social benefits and no default adjustment
+	 *
 	 **/
 	@Test(priority = 0)
 	public void formSubmissionWithoutSocialBenefitsNoAdjustments() {
@@ -49,7 +50,8 @@ public class PreRetirementCalculatorTest {
 		obj.setSocialBenefitStatusNo("true");
 		//Calculate button clicked
 		obj.setCalculateButton(Constants.XPATH_CALCULATE_BUTTON);
-		}
+		System.out.println("Calculate button clicked!");
+	}
 
 	/**
 	 * This method calculates with social benefits and no default adjustment
@@ -69,8 +71,9 @@ public class PreRetirementCalculatorTest {
 		obj.setSocialSecutityOveride(Constants.OVERRIDE_AMOUNT);
 		//Clicked the calculate button without default adjustment
 		obj.setCalculateButton(Constants.XPATH_CALCULATE_BUTTON);
+		System.out.println("Calculate button without default adjustment clicked!");
 	}
-	
+
 	/**
 	 * This method calculates with social benefits and default adjustment
 	 **/
@@ -98,13 +101,14 @@ public class PreRetirementCalculatorTest {
 		obj.setPostRetirementRoi(Constants.POST_RETIREMENT_ROI);
 		//Clicked on save changes
 		obj.setSaveChangesButton(Constants.XPATH_SAVE_CHANGES_BUTTON);
-	    //Clicked the calculate button with default adjustment
+		System.out.println("Clicked on save changes");
+		//Clicked the calculate button with default adjustment
 		obj.setCalculateButton(Constants.XPATH_CALCULATE_BUTTON);
-		}
+		System.out.println("Calculate button with default adjustment clicked!");
+	}
 
 	@AfterMethod
 	public void postSubmission() {
-		
 		System.out.println("Form submission successful!");
 	}
 
@@ -113,7 +117,6 @@ public class PreRetirementCalculatorTest {
 		driver.close();
 		driver.quit();
 	}
-
 }
 
 
